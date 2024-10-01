@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiStockTake.UI.Pages.InputPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MauiStockTake.UI.Controls"
+    Title="InputPage">
+    <Grid Padding="20" RowDefinitions="*, 3*, 2*, 4*, 1*">
+        <Border
+            BackgroundColor="Transparent"
+            Stroke="{StaticResource Primary}"
+            StrokeShape="RoundRectangle 5"
+            StrokeThickness="{OnPlatform WinUI=1,
+                                         Default=0}">
+
+            <SearchBar
+                x:Name="ProductSearchBar"
+                Grid.Row="0"
+                Placeholder="Search for a product....."
+                SearchCommand="{Binding SearchProductsCommand}"
+                Text="{Binding SearchTerm}" />
+        </Border>
+        <CollectionView
+            Grid.Row="1"
+            Margin="20,0"
+            ItemsSource="{Binding SearchResults}"
+            SelectedItem="{Binding SelectedProduct}"
+            SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Style="{StaticResource ProductSelector}">
+                        <Label
+                            FontSize="Large"
+                            Text="{Binding Name}"
+                            TextColor="Black" />
+                        <Label Text="{Binding ManufacturerName}" TextColor="Gray" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand"
+            IsRunning="True"
+            IsVisible="{Binding IsLoading}"
+            VerticalOptions="CenterAndExpand" />
+        <controls:MildredStepper
+            Grid.Row="2"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Value="{Binding Count, Mode=TwoWay}">
+            <controls:MildredStepper.Triggers>
+                <DataTrigger
+                    Binding="{Binding SelectedProduct, TargetNullValue=''}"
+                    TargetType="controls:MildredStepper"
+                    Value="">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </controls:MildredStepper.Triggers>
+        </controls:MildredStepper>
+
+
+        <!--
+        <Label
+            Grid.Row="2"
+            Style="{StaticResource CountLabelStyle}"
+            Text="{Binding Count}" />
+
+
+
+         <Stepper
+            Grid.Row="3"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Value="{Binding Count}">
+            <Stepper.Triggers>
+                <DataTrigger
+                    Binding="{Binding SelectedProduct, TargetNullValue=''}"
+                    TargetType="Stepper"
+                    Value="">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Stepper.Triggers>
+        </Stepper>
+        -->
+
+
+        <Button
+            Grid.Row="4"
+            Command="{Binding AddCountCommand}"
+            Text="Add count">
+            <Button.Triggers>
+                <DataTrigger
+                    Binding="{Binding Count}"
+                    TargetType="Button"
+                    Value="0">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+
+    </Grid>
+
+</ContentPage>

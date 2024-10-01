@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiStockTake.UI.Pages.ReportPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ReportPage">
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="Help">
+            <MenuFlyoutItem Command="{Binding ShowAboutPageCommand}" Text="About" />
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
+    <Grid>
+        <ActivityIndicator
+            HorizontalOptions="Center"
+            IsEnabled="True"
+            IsRunning="True"
+            IsVisible="{Binding IsLoading}"
+            VerticalOptions="Center" />
+        <CollectionView
+            Margin="30"
+            HorizontalOptions="Center"
+            ItemsSource="{Binding Inventory}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="{OnIdiom Desktop=10, Phone=30, Default=20}" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="2*, 2*, *, 2*, 2*" IsVisible="{OnIdiom Phone=False, Desktop=True}">
+                    <Label
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        Text="Product" />
+                    <Label
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        Text="Manufacturer" />
+                    <Label
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        Text="Count" />
+                    <Label
+                        Grid.Column="3"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        Text="Counted By" />
+                    <Label
+                        Grid.Column="4"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        Text="Counted On" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        BackgroundColor="{OnIdiom Phone={AppThemeBinding Light={StaticResource PrimaryBackground},
+                                                                         Dark={StaticResource PrimaryDarkBackground}},
+                                                  Default=Transparent}"
+                        Stroke="Transparent"
+                        StrokeShape="RoundRectangle 10">
+                        <Grid Margin="{OnIdiom Phone=20, Default=0}" ColumnDefinitions="{OnIdiom Phone='4*, *', Desktop='2*, 2*, *, 2*, 2*'}">
+                            <Label
+                                Grid.Column="0"
+                                FontSize="24"
+                                Text="{Binding ProductName}"
+                                TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                            Dark={StaticResource PrimaryDark}}" />
+                            <Label
+                                Grid.Column="1"
+                                FontSize="24"
+                                HorizontalTextAlignment="{OnIdiom Phone=Center}"
+                                Text="{OnIdiom Phone={Binding Count},
+                                               Desktop={Binding ManufacturerName}}"
+                                TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                            Dark={StaticResource PrimaryDark}}" />
+                            <Label
+                                Grid.Column="2"
+                                FontSize="24"
+                                IsVisible="{OnIdiom Phone=False,
+                                                    Desktop=True}"
+                                Text="{Binding Count}"
+                                TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                            Dark={StaticResource PrimaryDark}}" />
+                            <Label
+                                Grid.Column="3"
+                                FontSize="24"
+                                IsVisible="{OnIdiom Phone=False,
+                                                    Desktop=True}"
+                                Text="{Binding CountedByName}"
+                                TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                            Dark={StaticResource PrimaryDark}}" />
+                            <Label
+                                Grid.Column="4"
+                                FontSize="24"
+                                IsVisible="{OnIdiom Phone=False,
+                                                    Desktop=True}"
+                                Text="{Binding CountedAt}"
+                                TextColor="{AppThemeBinding Light={StaticResource Primary},
+                                                            Dark={StaticResource PrimaryDark}}">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding CountedAt}"
+                                        TargetType="Label"
+                                        Value="1/1/0001">
+                                        <Setter Property="Text" Value="No stock counted" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </Grid>
+                        <Border.Shadow>
+                            <Shadow
+                                Brush="{AppThemeBinding Light={StaticResource SecondaryBackground},
+                                                        Dark={StaticResource SecondaryDarkBackground}}"
+                                Opacity="0.8"
+                                Radius="10"
+                                Offset="-5,-5" />
+                        </Border.Shadow>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
+</ContentPage>

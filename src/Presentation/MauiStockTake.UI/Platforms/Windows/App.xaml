@@ -1,0 +1,11 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="MauiStockTake.UI.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MauiStockTake.UI.WinUI"
+    xmlns:maui="using:Microsoft.Maui">
+    <maui:MauiWinUIApplication.Resources>
+        <maui:Thickness x:Key="TextControlBorderThemeThickness">0</maui:Thickness>
+        <maui:Thickness x:Key="TextControlBorderThemeThicknessFocused">0</maui:Thickness>
+    </maui:MauiWinUIApplication.Resources>
+</maui:MauiWinUIApplication>

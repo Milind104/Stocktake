@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Monocept\\Work\\Chapter\\MauiStockTake\\src\\Presentation\\WebAPI\\wwwroot\\api\\specification.json",
+      "PackagePath": "staticwebassets\\api\\specification.json"
+    },
+    {
+      "Id": "C:\\Users\\Monocept\\Work\\Chapter\\MauiStockTake\\src\\Presentation\\WebAPI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MauiStockTake.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MauiStockTake.WebAPI.props",
+      "PackagePath": "build\\MauiStockTake.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MauiStockTake.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\MauiStockTake.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MauiStockTake.WebAPI.props",
+      "PackagePath": "buildTransitive\\MauiStockTake.WebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

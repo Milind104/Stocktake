@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiStockTake.UI.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="AboutPage">
+    <VerticalStackLayout Spacing="30">
+
+        <Label
+            HorizontalOptions="Center"
+            Text="Welcome to MauiStockTake,"
+            VerticalOptions="Center" />
+        <Label
+            HorizontalOptions="Center"
+            Text=" v1.0 "
+            VerticalOptions="Center" />
+        <Label
+            HorizontalOptions="Center"
+            Text="Copyright Mildred’s Surf Shack 2024"
+            VerticalOptions="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>

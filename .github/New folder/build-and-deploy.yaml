@@ -1,0 +1,40 @@
+name: Build and Deploy MauiStockTake
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    name: Build Android
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Decode keystore file
+        run: |
+          $keystorebase64 = "${{ secrets.ANDROID_KEYSTORE }}"
+          $keystore = [System.Convert]::FromBase64String($keystorebase64)
+          Set-Content "${{ github.workspace }}/mauistocktake.keystore" -Value $keystore -AsByteStream
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Install MAUI workload
+        run: dotnet workload install maui
+
+      - name: Build
+        run: dotnet publish src/Presentation/MauiStockTake.UI/MauiStockTake.UI.csproj -f:net8.0-android -c:Release /p:AndroidKeyStore=True /p:AndroidSigningKeyStore="${{ github.workspace }}/mauistocktake.keystore" /p:AndroidSigningKeyPass=${{ secrets.ANDROID_KEYPASSWORD }} /p:AndroidSigningKeyAlias=${{ secrets.ANDROID_KEYSTOREALIAS }} /p:AndroidSigningStorePass=${{ secrets.ANDROID_KEYSTOREPASSWORD }}
+
+      - name: Upload Android artifact
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: mauistocktake-android-build
+          path: src/Presentation/MauiStockTake.UI/bin/Release/net8.0-android/*Signed.aab
+
+        

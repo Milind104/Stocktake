@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiStockTake.UI.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LoginPage">
+    <Grid>
+        <FlexLayout
+            AlignItems="Center"
+            Direction="Column"
+            HorizontalOptions="Center"
+            JustifyContent="SpaceAround"
+            VerticalOptions="Center">
+            <Image
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                Source="surfshack_logo.jpeg"
+                VerticalOptions="Center"
+                WidthRequest="200">
+                <Image.Clip>
+                    <EllipseGeometry
+                        Center="100,100"
+                        RadiusX="100"
+                        RadiusY="100" />
+                </Image.Clip>
+            </Image>
+            <Label
+                FontSize="Title"
+                HorizontalOptions="Center"
+                Text="MauiStockTake"
+                VerticalOptions="Center" />
+            <Button
+                x:Name="LoginButton"
+                Clicked="LoginButton_Clicked"
+                HorizontalOptions="Center"
+                Text="Login"
+                VerticalOptions="Center" />
+
+        </FlexLayout>
+        <ActivityIndicator
+            x:Name="LoggingIn"
+            IsRunning="True"
+            IsVisible="false" />
+    </Grid>
+</ContentPage>

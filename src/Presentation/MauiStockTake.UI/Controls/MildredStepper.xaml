@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="MauiStockTake.UI.Controls.MildredStepper"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MauiStockTake.UI.Controls">
+
+    <Grid ColumnDefinitions="50,120,50">
+        <Button
+            x:Name="MinusButton"
+            Grid.Column="0"
+            Clicked="MinusButton_Clicked"
+            HorizontalOptions="Center"
+            MinimumWidthRequest="50"
+            Text="-"
+            VerticalOptions="Center" />
+        <Border
+            Grid.Column="1"
+            Margin="10"
+            BackgroundColor="Transparent"
+            Stroke="{StaticResource Primary}"
+            StrokeShape="RoundRectangle 5"
+            StrokeThickness="0">
+            <Border.Triggers>
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference ValueEntry}, Path=IsFocused}"
+                    TargetType="Border"
+                    Value="True">
+                    <Setter Property="StrokeThickness" Value="{OnPlatform Android=1}" />
+                </DataTrigger>
+            </Border.Triggers>
+            <controls:BorderlessEntry
+                x:Name="ValueEntry"
+                FontSize="42"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                TextChanged="ValueEntry_TextChanged"
+                VerticalOptions="Center" />
+        </Border>
+        <Button
+            x:Name="PlusButton"
+            Grid.Column="2"
+            Clicked="PlusButton_Clicked"
+            HorizontalOptions="Center"
+            MinimumWidthRequest="50"
+            Text="+"
+            VerticalOptions="Center" />
+    </Grid>
+</ContentView>

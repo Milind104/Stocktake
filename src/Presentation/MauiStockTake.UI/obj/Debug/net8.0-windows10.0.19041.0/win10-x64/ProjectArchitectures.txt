@@ -1,0 +1,1 @@
+C:\Users\Monocept\Work\Chapter\MauiStockTake\src\Presentation\MauiStockTake.UI\MauiStockTake.UI.csproj;x64
