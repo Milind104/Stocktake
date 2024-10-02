@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{7CBA8F51-C3C5-4115-8B72-07D03AFDF201}|src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj|solutionrelative:src\\presentation\\mauistocktake.ui\\mauistocktake.ui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7CBA8F51-C3C5-4115-8B72-07D03AFDF201}|src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj|c:\\milind\\project\\beforegithub\\mauistocktake\\src\\presentation\\mauistocktake.ui\\mauistocktake.ui.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{7CBA8F51-C3C5-4115-8B72-07D03AFDF201}|src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj|solutionrelative:src\\presentation\\mauistocktake.ui\\mauistocktake.ui.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7CBA8F51-C3C5-4115-8B72-07D03AFDF201}|src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj|c:\\milind\\project\\beforegithub\\mauistocktake\\src\\presentation\\mauistocktake.ui\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CBA8F51-C3C5-4115-8B72-07D03AFDF201}|src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj|solutionrelative:src\\presentation\\mauistocktake.ui\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,20 +42,36 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MauiStockTake.UI",
+              "DocumentMoniker": "C:\\Milind\\project\\beforegithub\\MauiStockTake\\src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
+              "RelativeDocumentMoniker": "src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
+              "ToolTip": "C:\\Milind\\project\\beforegithub\\MauiStockTake\\src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
+              "RelativeToolTip": "src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-01T04:23:11.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MauiStockTake.UI",
               "DocumentMoniker": "C:\\Milind\\project\\beforegithub\\MauiStockTake\\src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
               "RelativeDocumentMoniker": "src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
               "ToolTip": "C:\\Milind\\project\\beforegithub\\MauiStockTake\\src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
               "RelativeToolTip": "src\\Presentation\\MauiStockTake.UI\\MauiStockTake.UI.csproj",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-10-01T03:23:59.108Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Milind\\project\\beforegithub\\MauiStockTake\\src\\Presentation\\MauiStockTake.UI\\Services\\IAuthService.cs",
               "RelativeDocumentMoniker": "src\\Presentation\\MauiStockTake.UI\\Services\\IAuthService.cs",

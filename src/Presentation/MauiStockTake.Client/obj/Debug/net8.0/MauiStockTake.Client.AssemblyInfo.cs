@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MauiStockTake.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5649001ae34431f332d8a7ab3c87e43f01b1157d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MauiStockTake.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MauiStockTake.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
